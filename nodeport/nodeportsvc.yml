@@ -6,9 +6,9 @@ metadata:
      svclabel: svc
 spec:
   type: NodePort
-  ports:
-    - nodePort: 32077  //Port for Cluster node  
-      port: 9000 // Port for Service 
-      targetPort: 80  //Pod port
+  ports:          
+    - nodePort: 32077 
+      port: 9000 
+      targetPort: 80
   selector:
     app: webapp
