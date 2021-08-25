@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstdeploy
+  labels:
+    deplabel: firstdep
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      type: app
+  template:
+    metadata:
+      name: fpod
+      labels:
+        type: app
+    spec:
+      containers:
+        - name: fcont
+          image: coolgourav147/nginx-custom:v1
