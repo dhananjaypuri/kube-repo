@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstdeploy
+  labels:
+    deplabel: firstdep
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      type: app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1    
+  template:
+    metadata:
+      name: fpod
+      labels:
+        type: app
+    spec:
+      containers:
+        - name: fcont
+          image: coolgourav147/nginx-custom:v2
