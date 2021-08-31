@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  labels:
+    type: app1
+spec:
+  containers:
+    - name: firstpod
+      image: nginx
+      resources:
+        limits:
+          memory: 200Mi
+          cpu: 100m
